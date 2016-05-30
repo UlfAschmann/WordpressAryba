@@ -63,7 +63,7 @@
 								<li><a href="<?php echo get_home_url();  ?>/quienes-somos">Quienes Somos </a></li>
 								<li><a href="<?php echo get_home_url();  ?>/proyectos">Proyectos</a></li>
 								<li><a href="<?php echo get_home_url();  ?>/servicios">Servicios</a></li>
-								<li><a href="<?php echo get_home_url();  ?>/desarollo">Desarollos</a></li>
+								<li><a href="<?php echo get_home_url();  ?>/desarrollos">Desarollos</a></li>
 								<li><a href="<?php echo get_home_url();  ?>/socios">Socios</a></li>
 								<li><a href="<?php echo get_home_url();  ?>/premios">Premios</a></li>
 								<li><a href="<?php echo get_home_url();  ?>/contacto">Contacto</a></li>
