@@ -8,9 +8,25 @@ if (function_exists('acf_add_local_field_group')) {
         'key' => 'acf_customfields_home', //Este identificador debe ser unico
         'title' => 'Información extra para el Home',
         'fields' => array(
+            /*
+             * CARRUSEL PRINCIPAL
+             */
+            array(
+                'key' => 'extras_home_tab_1',
+                'label' => 'Carrusel Principal',
+                'name' => '',
+                'type' => 'tab',
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
             array(
                 'key' => 'extras_home_1',
-                'label' => 'Carrusel Principal',
+                'label' => 'Elementos o Items',
                 'name' => 'extras_home_carrusel_principal',
                 'type' => 'repeater',
                 'required' => 0,
@@ -73,6 +89,87 @@ if (function_exists('acf_add_local_field_group')) {
                     //'max_height' => 340,
                     ),
                 ),
+            ),
+            /*
+             * BIENVENIDOS
+             */
+            array(
+                'key' => 'extras_home_tab_2',
+                'label' => 'Bienvenidos',
+                'name' => '',
+                'type' => 'tab',
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'extras_home_bienvenidos_1',
+                'label' => 'Imagenes',
+                'name' => 'extras_home_bienvenidos',
+                'type' => 'repeater',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => true,
+                //'min' => 3,
+                //'max' => 3,
+                'layout' => 'row',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'extras_home_bienvenidos_item_1',
+                        'label' => 'Imagen',
+                        'name' => 'extras_home_bienvenidos_imagen',
+                        'type' => 'image',
+                        'required' => 1,
+                        //'instructions' => 'El tamaño sugerido 750 x 340px',
+                        'save_format' => 'object',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    //'min_width' => 750,
+                    //'min_height' => 340,
+                    //'max_width' => 750,
+                    //'max_height' => 340,
+                    ),
+                ),
+            ),
+            /*
+             * NUESTROS NÚMEROS
+             */
+            array(
+                'key' => 'extras_home_tab_3',
+                'label' => 'Nuestros números',
+                'name' => '',
+                'type' => 'tab',
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array(
+                'key' => 'extras_home_numeros_1',
+                'label' => 'Fondo',
+                'name' => 'extras_home_numeros_fondo',
+                'type' => 'image',
+                'required' => 1,
+                //'instructions' => 'El tamaño sugerido 750 x 340px',
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            //'min_width' => 750,
+            //'min_height' => 340,
+            //'max_width' => 750,
+            //'max_height' => 340,
             ),
         ),
         'location' => array(

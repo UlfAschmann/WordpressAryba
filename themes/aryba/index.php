@@ -1,5 +1,11 @@
 <?php get_header(); ?>
-<?php $items_carrusel = get_field('extras_home_carrusel_principal','options'); var_dump($items_carrusel);?>
+<?php
+$items_carrusel = get_field('extras_home_carrusel_principal', 'options');
+$total_items_carrusel = count($items_carrusel);
+
+$items_bienvenidos = get_field('extras_home_bienvenidos', 'options');
+$total_items_bienvenidos = count($items_carrusel);
+?>
 <!-- content-holder  -->
 <div class="content-holder">
     <!-- Page title -->
@@ -15,25 +21,14 @@
                 <!-- hero-wrap-image-slider  -->
                 <div class="hero-wrap-image-slider">
                     <!-- 1  -->
-                    <div class="item">
-                        <div class="bg" data-bg="images/bg/plaza-salamanca.jpg" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
-                    </div>
-                    <!-- 1  end-->
-                    <!-- 2  -->
-                    <div class="item">
-                        <div class="bg" data-bg="images/bg/juriquilla.jpg" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
-                    </div>
-                    <!-- 2 end -->
-                    <!-- 3  -->
-                    <div class="item">
-                        <div class="bg" data-bg="images/bg/puebla.jpg" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
-                    </div>
-                    <!-- 3 end  -->
-                    <!-- 4  -->
-                    <div class="item">
-                        <div class="bg" data-bg="images/bg/plaza-salamanca2.jpg" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
-                    </div>
-                    <!-- 4 end  -->
+                    <?php for ($i = 0; $i <= $total_items_carrusel; $i++): ?>
+                        <?php if (isset($items_carrusel[$i]['extras_home_carrusel_item_imagen'])): ?>
+                            <div class="item">
+                                <div class="bg" data-bg="<?php echo $items_carrusel[$i]['extras_home_carrusel_item_imagen']['url']; ?>" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
                 </div>
                 <!-- hero-wrap-image-slider  end -->
             </div>
@@ -42,42 +37,15 @@
             <div class="hero-wrap-text-slider-holder">
                 <!-- hero-wrap-image-slider  -->
                 <div class="hero-wrap-text-slider">
-                    <!-- 1  -->
-                    <div class="item">
-                        <div class="hero-wrap-item center-item">
-                            <h2> Desarrollo De Negocios</h2>
-                            <h3>De Categoría Mundial</h3>
-                            <a href="#" class="hero-link custom-scroll-link">Explorar</a>
+                    <?php for ($i = 0; $i < $total_items_carrusel; $i++): ?>
+                        <div class="item">
+                            <div class="hero-wrap-item center-item">
+                                <h2> <?php echo $items_carrusel[$i]['extras_home_carrusel_item_titutlo']; ?></h2>
+                                <h3><?php echo $items_carrusel[$i]['extras_home_carrusel_item_subtitutlo']; ?></h3>
+                                <a href="<?php echo $items_carrusel[$i]['extras_home_carrusel_item_url']; ?>" class="hero-link custom-scroll-link"><?php echo $items_carrusel[$i]['extras_home_carrusel_item_boton']; ?></a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 1  end-->
-                    <!-- 2  -->
-                    <div class="item">
-                        <div class="hero-wrap-item center-item">
-                            <h2>Creamos Oportunidades De Negocios</h2>
-                            <h3>Altamente Rentables</h3>
-                            <a href="portfolio-single.html" class="hero-link ajax">Explorar</a>
-                        </div>
-                    </div>
-                    <!-- 2 end -->
-                    <!-- 3  -->
-                    <div class="item">
-                        <div class="hero-wrap-item center-item">
-                            <h2>Rentabilidad En Proyectos Que</h2>
-                            <h3>Generan Oportunidades</h3>
-                            <a href="services.html" class="hero-link ajax">Explorar</a>
-                        </div>
-                    </div>
-                    <!-- 3 end  -->
-                    <!-- 3  -->
-                    <div class="item">
-                        <div class="hero-wrap-item center-item">
-                            <h2> Emprendemos Proyectos Exitosos Con</h2>
-                            <h3>Objetivos Concretos</h3>
-                            <a href="services.html" class="hero-link ajax">Explorar</a>
-                        </div>
-                    </div>
-                    <!-- 3 end  -->
+                    <?php endfor; ?>
                 </div>
                 <!-- hero-wrap-text-slider  end -->
                 <!--  navigation -->
@@ -107,20 +75,15 @@
                             <div class="single-slider-holder">
                                 <div class="single-slider">
                                     <!-- 1 -->
-                                    <div class="item">
-                                        <img src="images/folio/slider/1.jpg" alt="">
-                                    </div>
-                                    <!-- 1 end-->
-                                    <!-- 2 -->
-                                    <div class="item">
-                                        <img src="images/folio/slider/1.jpg" alt="">
-                                    </div>
-                                    <!-- 2 end-->
-                                    <!-- 3 -->
-                                    <div class="item">
-                                        <img src="images/folio/slider/1.jpg" alt="">
-                                    </div>
-                                    <!-- 3 end  -->
+                                    <?php for ($i = 0; $i <= $total_items_bienvenidos; $i++): ?>
+
+                                        <?php if (isset($items_bienvenidos[$i]['extras_home_bienvenidos_imagen'])): ?>
+                                            <div class="item">
+                                                <img src="<?php echo $items_bienvenidos[$i]['extras_home_bienvenidos_imagen']['url']; ?>" alt="">
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
+
                                 </div>
                                 <div class="customNavigation ssn">
                                     <a class="prev-slide transition"><i class="fa fa-angle-left"></i></a>
@@ -147,7 +110,7 @@
                                 <li><a href="#">Accesible</a></li>
                             </ul>
                         </div>
-                        <a href="portfolio.html" class="btn anim-button fl-l"><span>Ver Proyectos</span><i class="fa fa-long-arrow-right"></i></a>
+                        <a href="<?php echo get_home_url(); ?>/proyectos" class="btn anim-button fl-l"><span>Ver Proyectos</span><i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -162,7 +125,11 @@
         <!-- section number   end -->
         <!-- parallax image  -->
         <div class="parallax-inner">
-            <div class="bg" data-bg="images/bg/plaza-salamanca1.jpg" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
+            <div class="bg" data-bg="<?php
+            if ($fondo_numeros = get_field('extras_home_numeros_fondo', 'options')) {
+                echo $fondo_numeros['url'];
+            }
+            ?>" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
             <div class="overlay"></div>
         </div>
         <!-- parallax image  end -->
@@ -264,84 +231,67 @@
                 </div>
                 <!--  section title end  -->
                 <!--  Parallax items  -->
-                <!-- 1 -->
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="parallax-item left-direction">
-                            <div class="paralax-media">
-                                <!--<ul class="creat-list">
-                                                   <li><a href=".residencial">Residencial</a></li>
-                                                        <li><a href=".comercial">Comercial</a></li>
-                                                        <li><a href=".corporativo">Corporativo</a></li>
-                                                        <li><a href=".hotelero">Hotelero</a></li>
-                                                </ul>-->
-                                <div class="paralax-wrap">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/folio/thumbs/Acuario_03.png" class="respimg" alt="">
+
+                <?php
+                /*
+                 * Sacando la información del Loop
+                 */
+                $args = array(
+                    'post_type' => array('proyectos'),
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'posts_per_page' => 3,
+                );
+
+                $posts_proyectos = get_posts($args);
+                $num_total_proyectos = count($posts_proyectos);
+                ?>
+
+                <?php //var_dump($posts_proyectos);?>
+                <?php for ($i = 0; $i < $num_total_proyectos; $i++): ?>
+
+                    <?php $post_id = $posts_proyectos[$i]->ID; ?>
+                    <div class="row">
+                        <?php if (!($i % 2)) {
+                            echo '<div class="col-md-5"></div>';
+                        } ?>
+
+                        <div class="col-md-7">
+                            <div class="parallax-item <?php if ($i % 2) {
+                            echo "left-direction";
+                        } else {
+                            echo "right-direction";
+                        } ?>">
+                                <div class="paralax-media">
+                                    <div class="paralax-wrap">
+    <?php $imagen = get_field('proyectos_imagen_home', $post_id); ?>
+    <?php if (isset($imagen['url'])): ?>
+                                            <img src="<?php echo $imagen['url']; ?>" class="respimg" alt="">
+    <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="parallax-deck" data-top-bottom="transform: translateY(-200px);" data-bottom-top="transform: translateY(200px);">
-                                <div class="parallax-deck-item">
-                                    <h3>Ampliación <strong>Plaza Altacia</strong></h3>
-                                    <a href="portfolio-single.html" class="btn anim-button fl-l"><span>Ver Proyecto</span><i class="fa fa-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5"></div>
-                </div>
-                <!-- 1 end-->
-                <!-- 2 -->
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-7">
-                        <div class="parallax-item right-direction">
-                            <div class="paralax-media">
-                                <!--<ul class="creat-list">
-                                                        <li><a href="#">Interior</a></li>
-                                                        <li><a href="#">Wood</a></li>
-                                                </ul>-->
-                                <div class="paralax-wrap">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/folio/thumbs/1.jpg" class="respimg" alt="">
-                                </div>
-                            </div>
-                            <div class="parallax-deck" data-top-bottom="transform: translateY(-200px);" data-bottom-top="transform: translateY(200px);">
-                                <div class="parallax-deck-item">
-                                    <h3>Sed ut perspiciatis <strong>unde this</strong></h3>
-                                    <a href="portfolio-single.html" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2 end-->
-                <!-- 3 -->
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="parallax-item left-direction">
-                            <div class="paralax-media">
-                                <!--<ul class="creat-list">
-                                                        <li><a href="#">Houses</a></li>
-                                                        <li><a href="#">Design</a></li>
-                                                        <li><a href="#">Skyscraper</a></li>
-                                                </ul>-->
-                                <div class="paralax-wrap">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/folio/thumbs/1.jpg" class="respimg" alt="">
-                                </div>
-                            </div>
-                            <div class="parallax-deck" data-top-bottom="transform: translateY(-200px);" data-bottom-top="transform: translateY(200px);">
-                                <div class="parallax-deck-item">
-                                    <h3>Sed ut perspiciatis <strong>unde this</strong></h3>
-                                    <a href="portfolio-single.html" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                <div class="parallax-deck" data-top-bottom="transform: translateY(-200px);" data-bottom-top="transform: translateY(200px);">
+                                    <div class="parallax-deck-item">
+                                        <h3><?php echo $posts_proyectos[$i]->post_title; ?></h3>
+                                        <a href="<?php echo get_permalink($post_id); ?>" class="btn anim-button fl-l"><span>Ver Proyecto</span><i class="fa fa-long-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5"></div>
-                </div>
+
+<?php endfor; ?>
+
+
+
+
+
+
+
                 <!-- 3 end-->
                 <!-- custom-link-holder  -->
                 <div class="custom-link-holder">
-                    <a href="portfolio.html" class="btn anim-button" data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Ver todos los proyectos</span><i class="fa fa-long-arrow-right"></i></a>
+                    <a href="<?php echo get_home_url(); ?>/proyectos" class="btn anim-button" data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Ver todos los proyectos</span><i class="fa fa-long-arrow-right"></i></a>
                 </div>
                 <!-- custom-link-holder  end -->
             </div>
@@ -350,4 +300,4 @@
     </div>
 
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
