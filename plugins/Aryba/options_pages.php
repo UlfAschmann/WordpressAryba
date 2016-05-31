@@ -10,3 +10,15 @@ if( function_exists('acf_add_options_page') ) {
         'redirect' => false
     ));  
 }
+
+/*
+if( function_exists('acf_add_options_sub_page') ) {
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Información extra para el Home',
+        'menu_slug'     => 'admin-home-main', 
+        'menu_title'	=> 'Página',
+        'parent_slug'	=> 'admin-home-page',
+    ));
+}
+ * 
+ */

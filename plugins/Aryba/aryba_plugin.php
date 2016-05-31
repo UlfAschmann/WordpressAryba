@@ -49,6 +49,7 @@ include_once( plugin_dir_path( __FILE__ ) . '/custom_post_type.php' );
  */
 include_once( plugin_dir_path( __FILE__ ) . '/custom_fields_proyectos.php' );
 include_once( plugin_dir_path( __FILE__ ) . '/custom_fields_desarrollos.php' );
+include_once( plugin_dir_path( __FILE__ ) . '/custom_fields_extras.php' );
 
 
 
