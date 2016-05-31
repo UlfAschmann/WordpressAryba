@@ -50,7 +50,14 @@ include_once( plugin_dir_path( __FILE__ ) . '/custom_post_type.php' );
 include_once( plugin_dir_path( __FILE__ ) . '/custom_fields_proyectos.php' );
 include_once( plugin_dir_path( __FILE__ ) . '/custom_fields_desarrollos.php' );
 
+
+
 /*
  * CUSTOM TAXONOMIES
  */
 include_once( plugin_dir_path( __FILE__ ) . '/custom_taxonomies.php' );
+
+/*
+ * OPTIONS PAGE
+ */
+include_once( plugin_dir_path( __FILE__ ) . '/options_pages.php' );
