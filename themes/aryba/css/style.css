@@ -369,7 +369,7 @@ section {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: #000;
+	background: #003449;
 	-webkit-transition: all 200ms linear;
 	transition: all 200ms linear;
 	z-index: -1;
@@ -1599,7 +1599,7 @@ article {
 	bottom: 30px;
 	width: 250px;
 	right: 5px;
-	background: #000;
+	background: #003449;
 	padding: 15px 19px;
 }
 
@@ -1631,6 +1631,7 @@ article {
 	font-family: 'Muli', sans-serif;
 	font-weight: 600;
 	letter-spacing: 1px;
+	cursor: pointer;
 }
 
 .round-counter {
@@ -3014,7 +3015,7 @@ footer.fixed-footer .footer-social li a:hover {
 	left: 0;
 	width: 100%;
 	padding: 90px 20px 90px 80px;
-	background: #003c58;
+	background: #003449;
 	z-index: 2;
 }
 

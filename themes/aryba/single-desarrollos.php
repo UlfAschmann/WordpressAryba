@@ -89,6 +89,8 @@
 									<h4 class="lista-single">Lorem Ipsum available</h4>
 									<p>Door portals</p>
 
+									<a href="#" class=" btn anim-button   flat-btn   transition  fl-l" target="_blank"><span>Regresar</span><i class="fa fa-eye"></i></a>
+
 									<div class="content-nav">
 										<ul>
 											<li><a href="portfolio-single2.html" class=" text-link">next project</a></li>
