@@ -118,3 +118,50 @@ if (function_exists('acf_add_local_field_group')) {
         'menu_order' => 0,
     ));
 }
+
+
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
+        'key' => 'acf_customfields_desarrollos_page', //Este identificador debe ser unico
+        'title' => 'Información extra para los Desarrollos',
+        'fields' => array(
+            /*
+            array(
+                'key' => 'desarrollos_page_customfield_0',
+                'label' => 'Banner Principal',
+                'name' => 'desarrollos_page_imagen',
+                'type' => 'text',
+                'required' => 0,
+            ),
+             * 
+             */
+            array(
+                'key' => 'desarrollos_page_customfield_0',
+                'label' => 'Banner Principal',
+                'name' => 'desarrollos_page_imagen',
+                'type' => 'image',
+                'required' => 0,
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'admin-desarrollos-page',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+}

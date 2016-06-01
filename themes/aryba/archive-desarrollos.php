@@ -24,7 +24,9 @@ $num_total_desarrollos = count($posts_desarrollos);
     <div class="content">
         <section class="parallax-section">
             <div class="parallax-inner">
-                <div class="bg" data-bg="/bg/imagen-1.png" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
+                <?php $imagen_banner = get_field('desarrollos_page_imagen','options')?>
+
+                <div class="bg" data-bg="<?php if(isset($imagen_banner['url'])){echo $imagen_banner['url'];};?>" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);"></div>
                 <div class="overlay"></div>
             </div>
             <div class="container">
@@ -35,8 +37,8 @@ $num_total_desarrollos = count($posts_desarrollos);
                         </div>
                         <div class="col-md-6">
                             <ul class="creat-list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="desarrollo.html">Desarollos</a></li>
+                                <li><a href="<?php echo get_home_url(); ?>">Home</a></li>
+                                <li><a href="<?php echo get_home_url(); ?>/desarrollos">Desarollos</a></li>
                             </ul>
                         </div>
                     </div>
@@ -102,7 +104,7 @@ $num_total_desarrollos = count($posts_desarrollos);
                 <!-- end gallery items -->
                 <!-- custom-link-holder  -->
                 <div class="custom-link-holder">
-                    <a href="contact.html" class="btn anim-button" data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Contáctanos</span><i class="fa fa-long-arrow-right"></i></a>
+                    <a href="<?php echo get_home_url(); ?>/contacto" class="btn anim-button" data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Contáctanos</span><i class="fa fa-long-arrow-right"></i></a>
                 </div>
                 <!-- custom-link-holder  end -->
             </div>

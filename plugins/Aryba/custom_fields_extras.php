@@ -198,7 +198,6 @@ if (function_exists('acf_add_local_field_group')) {
         'key' => 'acf_customfields_servicios', //Este identificador debe ser unico
         'title' => 'Información extra para Servicios',
         'fields' => array(
-
             array(
                 'key' => 'extras_servicios_1',
                 'label' => 'Imagen Principal',
@@ -219,7 +218,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
             ),
-             array(
+            array(
                 'key' => 'extras_servicios_3',
                 'label' => 'Imagen Comercialización',
                 'name' => 'extras_servicios_imagen_3',
@@ -249,7 +248,6 @@ if (function_exists('acf_add_local_field_group')) {
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
             ),
-           
         ),
         'location' => array(
             array(
@@ -269,8 +267,8 @@ if (function_exists('acf_add_local_field_group')) {
         ),
         'menu_order' => 0,
     ));
-    
-    
+
+
     /*
      * QUIENES SOMOS
      */
@@ -278,7 +276,6 @@ if (function_exists('acf_add_local_field_group')) {
         'key' => 'acf_customfields_quienessomos', //Este identificador debe ser unico
         'title' => 'Información extra para Quiénes Somos',
         'fields' => array(
-            
             array(
                 'key' => 'extras_quienessomos_01',
                 'label' => 'Título Video',
@@ -293,7 +290,6 @@ if (function_exists('acf_add_local_field_group')) {
                 'type' => 'textarea',
                 'required' => 0,
             ),
-            
             array(
                 'key' => 'extras_quienessomos_0',
                 'label' => 'ID VIDEO de Youtube',
@@ -360,5 +356,173 @@ if (function_exists('acf_add_local_field_group')) {
         ),
         'menu_order' => 0,
     ));
-    
+
+
+    /*
+     * SOCIOS
+     */
+
+    acf_add_local_field_group(array(
+        'key' => 'acf_customfields_socios_page', //Este identificador debe ser unico
+        'title' => 'Información extra sección de Socios',
+        'fields' => array(
+            array(
+                'key' => 'socios_page_customfield_0',
+                'label' => 'Banner Principal',
+                'name' => 'socios_page_imagen',
+                'type' => 'image',
+                'required' => 0,
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+            array(
+                'key' => 'socios_page_customfield_1',
+                'label' => 'Socios',
+                'name' => 'socios_page_socios',
+                'type' => 'repeater',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'collapsed' => true,
+                'layout' => 'row',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'socios_page_customfield_item_1',
+                        'label' => 'Logo Socio',
+                        'name' => 'socios_page_socios_logo',
+                        'type' => 'image',
+                        'required' => 0,
+                        'save_format' => 'object',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'admin-socios-page',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
+
+    /*
+     * PREMIOS
+     */
+    acf_add_local_field_group(array(
+        'key' => 'acf_customfields_premios_page', //Este identificador debe ser unico
+        'title' => 'Información extra sección de Socios',
+        'fields' => array(
+            array(
+                'key' => 'premios_page_customfield_0',
+                'label' => 'Banner Principal',
+                'name' => 'premios_page_imagen',
+                'type' => 'image',
+                'required' => 0,
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+            array(
+                'key' => 'premios_page_customfield_1',
+                'label' => 'Premios',
+                'name' => 'premios_page_premios',
+                'type' => 'repeater',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'collapsed' => true,
+                'layout' => 'row',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'premios_page_customfield_item_1',
+                        'label' => 'Imagen',
+                        'name' => 'premios_page_premios_logo',
+                        'type' => 'image',
+                        'required' => 1,
+                        'save_format' => 'object',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                    ),
+                    array(
+                        'key' => 'premios_page_customfield_item_2',
+                        'label' => 'Título',
+                        'name' => 'premios_page_premios_titulo',
+                        'type' => 'text',
+                        'required' => 1,
+                    ),
+                    array(
+                        'key' => 'premios_page_customfield_item_3',
+                        'label' => 'Subtítulo',
+                        'name' => 'premios_page_premios_subtitulo',
+                        'type' => 'text',
+                        'required' => 0,
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'admin-premios-page',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));
+
+    acf_add_local_field_group(array(
+        'key' => 'acf_customfields_contacto_page', //Este identificador debe ser unico
+        'title' => 'Información extra sección de Contacto',
+        'fields' => array(
+            array(
+                'key' => 'contacto_page_customfield_0',
+                'label' => 'Banner Principal',
+                'name' => 'contacto_page_imagen',
+                'type' => 'image',
+                'required' => 0,
+                'save_format' => 'object',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'admin-contacto-page',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'hide_on_screen' => array(
+            ),
+        ),
+        'menu_order' => 0,
+    ));
 }
