@@ -1,4 +1,9 @@
 <?php get_header(); ?>
+<style>
+    .error{
+        color: red;
+    }
+</style>
 <!-- content-holder  -->
 <div class="content-holder">
     <!-- Page title -->
@@ -79,10 +84,19 @@
                         <div class="contact-form-holder">
                             <div id="contact-form">
                                 <div id="message"></div>
-                                <form method="post" action="php/contact.php" name="contactform" id="contactform">
-                                    <input name="name" type="text" id="name" onClick="this.select()" value="Name">
-                                    <input name="email" type="text" id="email" onClick="this.select()" value="E-mail">
-                                    <textarea name="comments" id="comments" onClick="this.select()">Message</textarea>
+                                <form method="post" name="contactform" id="contactform">
+                                    <p>
+                                        <input name="cname" type="text" id="cname" placeholder="Nombre" type="text">
+                                    </p>
+                                    <p>
+                                        <input name="email" type="text" id="email"  placeholder="E-mail">
+                                    </p>
+                                    <p>
+                                        <textarea  name="comments" id="comments" required>Deja tu mensaje...</textarea>
+                                    </p>
+
+
+
                                     <button type="submit" id="submit" data-top-bottom="transform: translateY(-50px);" data-bottom-top="transform: translateY(50px);"><span>Send Message </span></button>
                                 </form>
                             </div>
@@ -97,3 +111,52 @@
 
 
     <?php get_footer(); ?>
+
+    <script>
+        $(document).ready(function () {
+            $("#contactform").validate({
+                rules: {
+                    cname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    comments: {
+                        required: true
+                    }
+                },
+                messages: {
+                    cname: {
+                        required: "El nombre es obligatorio",
+                        minlength: "Tu nombre debe contener al menos 2 caracteres"
+                    },
+                    email: {
+                        required: "El email es obligatorio",
+                        email: "No es un formato de email válido"
+                    },
+                    comments: {
+                        required: "El mensaje es obligatorio"
+                    }
+                }
+            });
+        });
+        $('#submit').click(function () {
+            if ($('#contactform').valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: '<?php echo get_template_directory_uri(); ?>/ajax_mail.php',
+                    data: $('#contactform').serialize(),
+                    success: function (respuesta) {
+                        console.log(respuesta);
+                    },
+                    dataType: 'html'
+                });
+            }
+            return false;
+        }
+        );
+
+    </script>
