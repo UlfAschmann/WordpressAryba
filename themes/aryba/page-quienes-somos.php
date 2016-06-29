@@ -37,7 +37,7 @@
 				<div class="sect-subtitle right-align-dec" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);"><span>01</span></div>
 				<div class="container">
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<h2 class="section-title">Nuestra <strong> Historia</strong></h2>
 							<p>GRUPO ARYBA nace bajo la visión y experiencia del Ing. Alejandro Arena Torres Landa (QEPD), quién ideó, proyectó y construyó el centro comercial Plaza Mayor en la ciudad de León, Guanajuato, uno de los más grandes de México. Con su experiencia de más de diez años en el ramo, en 1996 se crea una compañía enfocada a canalizar esta visión en el desarrollo de centros comerciales. A lo largo de estos veinte años, GRUPO ARYBA conformado por profesionistas con gran compromiso y dinamismo, ha realizado obras de gran importancia contribuyendo de esta forma al desarrollo y fortalecimiento del país.Como parte de las inversiones manejadas, hemos contado con el apoyo y la confianza de fondos internacionales desde hace más de diez años.</p>
 
@@ -46,7 +46,7 @@
 							<p>Nuestros servicios abarcan cualquier etapa de su proceso, desde la planeación hasta su comercialización, de manera específica o global.
 							</p>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-md-offset-1">
 							<div class="parallax-box">
 								<?php $imagen_historia = get_field('extras_quienessomos_imagen_2','options')?>
 									<img src="<?php if(isset($imagen_historia['url'])){echo $imagen_historia['url'];};?>" class="respimg" alt="">

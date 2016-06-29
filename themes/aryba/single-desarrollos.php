@@ -68,7 +68,7 @@
 										<div class="custom-inner">
 											<div class="row">
 												<div class="col-md-6">
-													<h3>Project details</h3>
+													<h3>Detalles del Proyecto</h3>
 												</div>
 												<div class="col-md-6">
 													<?php
