@@ -1,4 +1,4 @@
-<?php //if (!is_post_type_archive('proyectos') && !is_singular('proyectos') && !is_post_type_archive('desarrollos') && !is_singular('desarrollos') && !is_404()):  ?>
+<?php //if (!is_post_type_archive('proyectos') && !is_singular('proyectos') && !is_post_type_archive('desarrollos') && !is_singular('desarrollos') && !is_404()):   ?>
 <?php if (!is_post_type_archive('proyectos') && !is_post_type_archive('desarrollos') && !is_404()): ?>
     <!-- content footer-->
     <div class="height-emulator"></div>
@@ -106,7 +106,8 @@
 </div>
 <!-- Main end -->
 <!--=============== google map ===============-->
-
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/map.js"></script>
 
 <!--=============== scripts  ===============-->
 

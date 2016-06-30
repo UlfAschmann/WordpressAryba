@@ -49,7 +49,7 @@
                             <!-- 1 -->
                             <?php for ($i = 0; $i < $num_items; $i++): ?>
                                 <div class="item">
-                                    <img src="<?php echo $galeria[$i]['proyectos_galeria_imagen']['url']; ?>" alt="">
+                                    <img class="lazyOwl"  src="<?php echo $galeria[$i]['proyectos_galeria_imagen']['url']; ?>" alt="">
                                     <a data-src="<?php echo $galeria[$i]['proyectos_galeria_imagen']['url']; ?>" class="popup-image slider-zoom" data-sub-html="alteration in some">
                                         <i class="fa fa-expand"></i>
                                     </a>
